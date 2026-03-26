@@ -80,6 +80,56 @@ npm run dev
 
 `http://localhost:3000` にアクセスして Next.js のデフォルトページが表示されれば OK です。
 
+---
+
+## フェーズ2: Google Maps パッケージのインストール
+
+```bash
+npm install @vis.gl/react-google-maps
+```
+
+---
+
+## フェーズ1 コミット・プッシュ
+
+```bash
+git add \
+  lib/types.ts \
+  lib/data.ts \
+  data/theaters.json \
+  data/screens.json \
+  data/seats.json \
+  CLAUDE.md \
+  .gitignore && \
+  git commit -m "feat: フェーズ1 型定義・JSONデータ作成" && \
+  git push
+```
+
+---
+
+## フェーズ2 コミット・プッシュ
+
+```bash
+git add \
+  app/layout.tsx \
+  app/page.tsx \
+  components/HomeLayout.tsx \
+  components/map/TheaterMap.tsx \
+  components/theater/TheaterList.tsx \
+  package.json \
+  package-lock.json \
+  TODO.md \
+  SETUP_COMMANDS.md && \
+  git commit -m "feat: フェーズ2 トップページ（地図・映画館一覧）" && \
+  git push
+```
+
+---
+
+## トラブルシューティング: node_modules が壊れた場合
+
+```bash
 cd /Users/dnz_nishimaru/Desktop/challenge/cinema_seat_finder && \
-rm -rf node_modules && \
-npm install
+  rm -rf node_modules && \
+  npm install
+```

@@ -8,35 +8,34 @@
 - [x] `.env.local` を作成し、`.gitignore` に追加されていることを確認する
 - [ ] Google Maps API キーを取得し、`.env.local` に設定する
 - [x] ディレクトリ構成（`app/`, `components/`, `data/`, `lib/`）を作成する
-- [ ] Git リポジトリを初期化し、初回コミットを行う
+- [x] Git リポジトリを初期化し、初回コミットを行う
 
 ---
 
 ## Phase 1: 型定義・JSONデータ作成
 
-- [ ] `lib/types.ts` に型定義を記述する（`Theater`, `Screen`, `Seat`, `SeatRecommendation`）
-- [ ] `lib/data.ts` にJSONデータを読み込むユーティリティ関数を作成する
-- [ ] 対象とする映画館を選定する（実在の映画館から数館に絞る、またはモデルデータで代用）
-- [ ] `data/theaters.json` に映画館データを記述する
-- [ ] `data/screens.json` にスクリーンデータを記述する（1館につき1〜2スクリーン程度）
-- [ ] `data/seats.json` に座席データを記述する
-  - [ ] 各座席の行・列・通路隣接フラグを設定する
-  - [ ] 各モード（バランス / 没入感 / 全体把握 / 出入り / 酔いにくさ）のおすすめ座席と理由テキストを手動記述する
+- [x] `lib/types.ts` に型定義を記述する（`Theater`, `Screen`, `ScreenRecommendations`, `ModeRecommendation`）
+- [x] `lib/data.ts` にJSONデータを読み込むユーティリティ関数を作成する
+- [x] 対象とする映画館を選定する（実在の映画館から数館に絞る、またはモデルデータで代用）
+- [x] `data/theaters.json` に映画館データを記述する
+- [x] `data/screens.json` にスクリーンデータを記述する（1館につき1〜2スクリーン程度）
+- [x] `data/seats.json` に座席データを記述する（スクリーン単位・モード単位のおすすめ座席リスト形式）
+  - [x] 各モード（バランス / 没入感 / 全体把握 / 出入り / 酔いにくさ）のおすすめ座席と理由テキストを手動記述する
 
 ---
 
 ## Phase 2: トップページ（地図 + 映画館一覧）
 
-- [ ] `app/page.tsx` のレイアウトを作成する（左：一覧パネル、右：地図エリア）
-- [ ] `components/map/TheaterMap.tsx` を作成する
-  - [ ] Google Maps JavaScript API を読み込む
-  - [ ] 映画館の位置にピンを表示する
-  - [ ] ピンをクリックで映画館を選択状態にする
-- [ ] `components/theater/TheaterList.tsx` を作成する
-  - [ ] 映画館一覧をカード形式で表示する
-  - [ ] カードをクリックで映画館詳細ページへ遷移する
-- [ ] 地図と一覧を連動させる（地図のピンと一覧カードで選択状態を共有）
-- [ ] 現在地取得ボタンを実装する（Geolocation API）
+- [x] `app/page.tsx` のレイアウトを作成する（左：一覧パネル、右：地図エリア）
+- [x] `components/map/TheaterMap.tsx` を作成する
+  - [x] Google Maps JavaScript API を読み込む（@vis.gl/react-google-maps）
+  - [x] 映画館の位置にピンを表示する
+  - [x] ピンをクリックで映画館を選択状態にする
+- [x] `components/theater/TheaterList.tsx` を作成する
+  - [x] 映画館一覧をカード形式で表示する
+  - [x] カードをクリックで映画館詳細ページへ遷移する
+- [x] 地図と一覧を連動させる（地図のピンと一覧カードで選択状態を共有）
+- [x] 現在地取得ボタンを実装する（Geolocation API）
 
 ---
 
