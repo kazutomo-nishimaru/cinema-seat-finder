@@ -3,15 +3,25 @@
 import Link from 'next/link';
 import type { Theater } from '@/lib/types';
 import { cn } from '@/lib/cn';
+import FilterPanel from '@/components/theater/FilterPanel';
 
 type Props = {
   theaters: Theater[];
   selectedId: string | null;
   onSelect: (id: string | null) => void;
   onLocate: (location: { lat: number; lng: number }) => void;
+  activeFilters: string[];
+  onFilterChange: (filters: string[]) => void;
 };
 
-export default function TheaterList({ theaters, selectedId, onSelect, onLocate }: Props) {
+export default function TheaterList({
+  theaters,
+  selectedId,
+  onSelect,
+  onLocate,
+  activeFilters,
+  onFilterChange,
+}: Props) {
   // 現在地を取得して地図を移動
   const handleGeolocation = () => {
     if (!navigator.geolocation) {
@@ -45,8 +55,16 @@ export default function TheaterList({ theaters, selectedId, onSelect, onLocate }
         </button>
       </div>
 
+      {/* 絞り込みパネル */}
+      <FilterPanel activeFilters={activeFilters} onChange={onFilterChange} />
+
       {/* 映画館一覧 */}
       <ul className="flex-1 overflow-y-auto p-3 space-y-2">
+        {theaters.length === 0 && (
+          <li className="text-center text-xs text-gray-400 pt-8">
+            条件に一致する映画館が見つかりませんでした
+          </li>
+        )}
         {theaters.map((theater) => {
           const isSelected = selectedId === theater.theater_id;
           return (

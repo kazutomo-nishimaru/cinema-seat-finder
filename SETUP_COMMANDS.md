@@ -126,6 +126,21 @@ git add \
 
 ---
 
+## フェーズ3 コミット・プッシュ
+
+```bash
+git add \
+  components/theater/FilterPanel.tsx \
+  components/theater/TheaterList.tsx \
+  components/HomeLayout.tsx \
+  TODO.md \
+  SETUP_COMMANDS.md && \
+  git commit -m "feat: フェーズ3 絞り込み機能" && \
+  git push
+```
+
+---
+
 ## トラブルシューティング: node_modules が壊れた場合
 
 ```bash
