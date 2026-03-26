@@ -56,12 +56,18 @@ grep ".env.local" .gitignore
 
 ---
 
-## Step 5: Git リポジトリの初期化と初回コミット
+## Step 5: GitHub リポジトリの作成・初回コミット・push
 
 ```bash
-git init
-git add .
-git commit -m "feat: フェーズ0 初期セットアップ"
+cd /Users/dnz_nishimaru/Desktop/challenge/cinema_seat_finder && \
+  git init && \
+  git add . && \
+  git commit -m "feat: フェーズ0 初期セットアップ" && \
+  gh repo create cinema-seat-finder \
+    --public \
+    --source=. \
+    --remote=origin \
+    --push
 ```
 
 ---
@@ -73,3 +79,7 @@ npm run dev
 ```
 
 `http://localhost:3000` にアクセスして Next.js のデフォルトページが表示されれば OK です。
+
+cd /Users/dnz_nishimaru/Desktop/challenge/cinema_seat_finder && \
+rm -rf node_modules && \
+npm install

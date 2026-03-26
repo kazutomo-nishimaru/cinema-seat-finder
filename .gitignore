@@ -22,6 +22,7 @@
 
 # misc
 .DS_Store
+SETUP_COMMANDS.md
 *.pem
 
 # debug

@@ -2,12 +2,12 @@
 
 ## Phase 0: 環境構築・初期設定
 
-- [ ] Next.js プロジェクトを作成する（TypeScript / ESLint / Tailwind CSS を有効化）
-- [ ] Prettier をインストールし、`.prettierrc` を設定する
-- [ ] `clsx` と `tailwind-merge` をインストールし、`lib/cn.ts` に `cn()` ユーティリティを作成する
-- [ ] `.env.local` を作成し、`.gitignore` に追加されていることを確認する
+- [x] Next.js プロジェクトを作成する（TypeScript / ESLint / Tailwind CSS を有効化）
+- [x] Prettier をインストールし、`.prettierrc` を設定する
+- [x] `clsx` と `tailwind-merge` をインストールし、`lib/cn.ts` に `cn()` ユーティリティを作成する
+- [x] `.env.local` を作成し、`.gitignore` に追加されていることを確認する
 - [ ] Google Maps API キーを取得し、`.env.local` に設定する
-- [ ] ディレクトリ構成（`app/`, `components/`, `data/`, `lib/`）を作成する
+- [x] ディレクトリ構成（`app/`, `components/`, `data/`, `lib/`）を作成する
 - [ ] Git リポジトリを初期化し、初回コミットを行う
 
 ---
