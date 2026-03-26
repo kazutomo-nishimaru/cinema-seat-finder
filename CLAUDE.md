@@ -164,25 +164,24 @@ type Screen = {
 
 ### 座席データ（`data/seats.json`）
 
-座席ごとに、各モードでおすすめかどうかと理由テキストを**手動で記述**する。ロジックによる自動計算は行わない。
+座席データは**スクリーン単位・モード単位**で管理する。座席1つずつにデータを持たせず、「どの座席がおすすめか」をリストで記述する。ロジックによる自動計算は行わない。
+
+座席IDは `"行ラベル-列番号"` 形式（例: `"B-3"` = B列3番）。行ラベルは前から A, B, C ... のアルファベット順。
 
 ```typescript
-type SeatRecommendation = {
-  is_recommended: boolean;
-  reason: string; // 例: "中央寄りでスクリーン全体を見渡しやすい"
+type ModeRecommendation = {
+  seats: string[]; // 例: ["B-3", "C-4"]（行ラベル-列番号）
+  reason: string;  // 例: "スクリーン中央に近く映像・音響のバランスが最も取れた位置"
 };
 
-type Seat = {
-  seat_id: string;
+type ScreenRecommendations = {
   screen_id: string;
-  row: number;
-  column: number;
   recommendations: {
-    balance: SeatRecommendation;      // バランス重視
-    immersive: SeatRecommendation;    // 没入感重視
-    overview: SeatRecommendation;     // 全体把握重視
-    accessibility: SeatRecommendation; // 出入りしやすさ重視
-    motion_sickness: SeatRecommendation; // 酔いにくさ重視
+    balance: ModeRecommendation;       // バランス重視
+    immersive: ModeRecommendation;     // 没入感重視
+    overview: ModeRecommendation;      // 全体把握重視
+    accessibility: ModeRecommendation; // 出入りしやすさ重視
+    motion_sickness: ModeRecommendation; // 酔いにくさ重視
   };
 };
 ```
@@ -203,12 +202,11 @@ type Seat = {
 
 ### 理由テキストの記述ルール
 
-- 各座席・各モードごとに `reason` を自分で記述する
-- `is_recommended: false` の場合、`reason` は空文字でよい
-- 理由は短く、ユーザーが直感的に理解できる表現にする
-  - 例: 「中央寄りでスクリーン全体を見渡しやすい」
-  - 例: 「やや後方で全体を把握しやすい」
-  - 例: 「通路に近く出入りしやすい」
+- 理由はモード単位で1つ記述する（座席ごとではない）
+- 短く、ユーザーが直感的に理解できる表現にする
+  - 例: 「スクリーン中央に近く映像・音響のバランスが最も取れた位置」
+  - 例: 「後方からスクリーン全体を余裕を持って見渡せる」
+  - 例: 「通路に隣接または端席で途中退席や出入りがしやすい」
 
 ---
 

@@ -23,6 +23,9 @@
 # misc
 .DS_Store
 SETUP_COMMANDS.md
+
+# Claude Code 設定（コミット不要）
+.claude/
 *.pem
 
 # debug

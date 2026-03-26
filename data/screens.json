@@ -1,0 +1,38 @@
+[
+  {
+    "screen_id": "screen-1",
+    "theater_id": "theater-1",
+    "screen_name": "スタンダード 1",
+    "seat_rows": 6,
+    "seat_columns": 8,
+    "aisle_positions": [3],
+    "screen_type": "standard"
+  },
+  {
+    "screen_id": "screen-2",
+    "theater_id": "theater-1",
+    "screen_name": "IMAXシアター",
+    "seat_rows": 8,
+    "seat_columns": 10,
+    "aisle_positions": [3, 7],
+    "screen_type": "IMAX"
+  },
+  {
+    "screen_id": "screen-3",
+    "theater_id": "theater-2",
+    "screen_name": "Dolby Cinemaシアター",
+    "seat_rows": 8,
+    "seat_columns": 10,
+    "aisle_positions": [3, 7],
+    "screen_type": "Dolby Cinema"
+  },
+  {
+    "screen_id": "screen-4",
+    "theater_id": "theater-3",
+    "screen_name": "4DXシアター",
+    "seat_rows": 6,
+    "seat_columns": 8,
+    "aisle_positions": [3],
+    "screen_type": "4DX"
+  }
+]
