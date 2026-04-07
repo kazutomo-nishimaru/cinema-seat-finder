@@ -74,10 +74,10 @@
 
 ## Phase 6: 仕上げ・デプロイ
 
-- [ ] レスポンシブ対応を確認・調整する（モバイル表示）
-- [ ] ローディング UI を追加する（`loading.tsx` / スケルトン）
-- [ ] エラー UI を追加する（`error.tsx` / 404ページ）
-- [ ] Lint・フォーマットを通す（`npm run lint` / `npx prettier --write .`）
+- [x] レスポンシブ対応を確認・調整する（モバイル表示）
+- [x] ローディング UI を追加する（`loading.tsx` / スケルトン）
+- [x] エラー UI を追加する（`error.tsx` / 404ページ）
+- [x] Lint・フォーマットを通す（`npm run lint` / `npx prettier --write .`）
 - [ ] Vercel にデプロイする
   - [ ] 環境変数 `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` を Vercel に設定する
-- [ ] `README.md` を作成する（概要・機能・技術構成・起動方法）
+- [x] `README.md` を作成する（概要・機能・技術構成・起動方法）

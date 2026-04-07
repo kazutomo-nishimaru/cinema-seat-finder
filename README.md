@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cinema Seat Finder
 
-## Getting Started
+地図で映画館を探し、スクリーンに応じたおすすめ座席を提案するアプリです。
 
-First, run the development server:
+## 機能
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **映画館を地図で検索** — Google Maps 上にピンで映画館を表示。ピンと一覧カードを連動して選択できます
+- **現在地から探す** — Geolocation API で現在地を取得し、地図を自動移動
+- **設備で絞り込み** — IMAX / Dolby Cinema / 名画座 でフィルタリング
+- **映画館詳細表示** — 住所・アクセス・設備・公式サイトリンク・スクリーン一覧
+- **おすすめ座席提案** — 「足元ゆったり」「推し席」の2モードで座席番号とコメントを表示
+
+## 技術構成
+
+| 項目 | 採用技術 |
+|------|----------|
+| フレームワーク | Next.js 16 (App Router) |
+| 言語 | TypeScript |
+| スタイリング | Tailwind CSS |
+| 地図 | Google Maps JavaScript API (@vis.gl/react-google-maps) |
+| データ管理 | JSON（静的ファイル） |
+| ホスティング | Vercel |
+
+## 起動方法
+
+### 1. リポジトリをクローン
+
+```sh
+git clone <repository-url>
+cd cinema_seat_finder
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. 依存関係をインストール
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. 環境変数を設定
 
-## Learn More
+`.env.local` を作成し、Google Maps API キーを設定します。
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+cp .env.local.example .env.local
+# .env.local を編集して API キーを入力
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_api_key_here
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> Google Maps API キーは [Google Cloud Console](https://console.cloud.google.com/) で取得できます。Maps JavaScript API を有効にしてください。
 
-## Deploy on Vercel
+### 4. 開発サーバーを起動
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```sh
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[http://localhost:3000](http://localhost:3000) をブラウザで開いてください。
+
+## その他のコマンド
+
+```sh
+npm run build   # 本番ビルド
+npm run start   # 本番サーバー起動
+npm run lint    # ESLint チェック
+npx prettier --write .  # コードフォーマット
+```
+
+## ディレクトリ構成
+
+```
+cinema_seat_finder/
+├── app/                        # Next.js App Router
+│   ├── layout.tsx
+│   ├── page.tsx                # トップページ（地図 + 映画館一覧）
+│   ├── not-found.tsx           # 404 ページ
+│   ├── error.tsx               # エラーページ
+│   ├── loading.tsx             # ローディング UI
+│   └── theaters/[id]/          # 映画館詳細ページ
+├── components/
+│   ├── HomeLayout.tsx
+│   ├── map/                    # 地図関連
+│   ├── theater/                # 映画館関連
+│   └── seat/                   # 座席関連
+├── data/                       # JSON データ
+│   ├── theaters.json
+│   ├── screens.json
+│   └── seats.json
+└── lib/                        # 型定義・ユーティリティ
+    ├── types.ts
+    ├── data.ts
+    └── cn.ts
+```

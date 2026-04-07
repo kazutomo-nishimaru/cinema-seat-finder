@@ -81,9 +81,7 @@ export default function TheaterDetail({ theater, screensWithRecs }: Props) {
           </h2>
 
           {screensWithRecs.length === 0 ? (
-            <p className="text-sm text-gray-400 text-center py-8">
-              スクリーン情報がありません
-            </p>
+            <p className="text-sm text-gray-400 text-center py-8">スクリーン情報がありません</p>
           ) : (
             <ul className="space-y-4">
               {screensWithRecs.map(({ screen, recommendations }) => (
@@ -110,7 +108,7 @@ export default function TheaterDetail({ theater, screensWithRecs }: Props) {
                   </p>
 
                   {/* おすすめ座席セクション */}
-                  <ScreenSection screen={screen} recommendations={recommendations} />
+                  <ScreenSection recommendations={recommendations} />
                 </li>
               ))}
             </ul>

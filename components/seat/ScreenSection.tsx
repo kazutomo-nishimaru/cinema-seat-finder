@@ -1,23 +1,20 @@
 'use client';
 
 import { useState } from 'react';
-import type { Screen, ScreenRecommendations, RecommendMode } from '@/lib/types';
+import type { ScreenRecommendations, RecommendMode } from '@/lib/types';
 import RecommendModeSelector from './RecommendModeSelector';
 
 type Props = {
-  screen: Screen;
   recommendations: ScreenRecommendations | undefined;
 };
 
 // モード選択状態を管理し、おすすめ座席番号とコメントを表示するクライアントコンポーネント
-export default function ScreenSection({ screen: _screen, recommendations }: Props) {
+export default function ScreenSection({ recommendations }: Props) {
   const [mode, setMode] = useState<RecommendMode>('legroom');
 
   if (!recommendations) {
     return (
-      <div className="mt-3 py-4 text-center text-xs text-gray-400">
-        座席データがありません
-      </div>
+      <div className="mt-3 py-4 text-center text-xs text-gray-400">座席データがありません</div>
     );
   }
 
