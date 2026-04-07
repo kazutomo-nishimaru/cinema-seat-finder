@@ -6,7 +6,7 @@
 - [x] Prettier をインストールし、`.prettierrc` を設定する
 - [x] `clsx` と `tailwind-merge` をインストールし、`lib/cn.ts` に `cn()` ユーティリティを作成する
 - [x] `.env.local` を作成し、`.gitignore` に追加されていることを確認する
-- [ ] Google Maps API キーを取得し、`.env.local` に設定する
+- [x] Google Maps API キーを取得し、`.env.local` に設定する
 - [x] ディレクトリ構成（`app/`, `components/`, `data/`, `lib/`）を作成する
 - [x] Git リポジトリを初期化し、初回コミットを行う
 
@@ -50,25 +50,25 @@
 
 ## Phase 4: 映画館詳細ページ
 
-- [ ] `app/theaters/[id]/page.tsx` を作成する
-- [ ] 映画館の基本情報を表示する（名称 / 住所 / アクセス / 設備 / 公式サイトリンク）
-- [ ] `components/theater/TheaterDetail.tsx` を作成する
-- [ ] スクリーン一覧を表示する
-- [ ] 各スクリーンの座席マップへのリンク（またはアコーディオン展開）を実装する
+- [x] `app/theaters/[id]/page.tsx` を作成する
+- [x] 映画館の基本情報を表示する（名称 / 住所 / アクセス / 設備 / 公式サイトリンク）
+- [x] `components/theater/TheaterDetail.tsx` を作成する
+- [x] スクリーン一覧を表示する
+- [x] 各スクリーンの座席マップへのリンク（またはアコーディオン展開）を実装する
 
 ---
 
 ## Phase 5: 座席マップ・おすすめ座席表示
 
-- [ ] `components/seat/SeatMap.tsx` を作成する
-  - [ ] 座席をグリッドで表示する（行・列の構造を再現）
-  - [ ] 通路位置に応じてギャップを入れる
-- [ ] `components/seat/SeatCell.tsx` を作成する
-  - [ ] 通常席 / おすすめ席 / 非おすすめ席でスタイルを切り替える
-  - [ ] おすすめ席をホバー / クリックで理由テキストを表示する
-- [ ] `components/seat/RecommendModeSelector.tsx` を作成する
-  - [ ] 5つのモードをボタン形式で切り替えられるUIを作成する
-- [ ] モード切り替えに応じて `SeatMap` のハイライトが変わるよう状態管理する
+- [x] `components/seat/SeatMap.tsx` を作成する
+  - [x] 座席をグリッドで表示する（行・列の構造を再現）
+  - [x] 通路位置に応じてギャップを入れる
+- [x] `components/seat/SeatCell.tsx` を作成する
+  - [x] 通常席 / おすすめ席 / 非おすすめ席でスタイルを切り替える
+  - [x] おすすめ席をホバー / クリックで理由テキストを表示する
+- [x] `components/seat/RecommendModeSelector.tsx` を作成する
+  - [x] 5つのモードをボタン形式で切り替えられるUIを作成する
+- [x] モード切り替えに応じて `SeatMap` のハイライトが変わるよう状態管理する
 
 ---
 
