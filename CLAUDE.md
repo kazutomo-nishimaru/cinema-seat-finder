@@ -32,7 +32,7 @@
 
 ## ディレクトリ構成
 
-```
+```txt
 cinema_seat_finder/
 ├── app/                        # Next.js App Router
 │   ├── layout.tsx              # ルートレイアウト
@@ -86,7 +86,7 @@ npx prettier --write .
 
 ## 環境変数
 
-```
+```.env
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=<Google Maps APIキー>
 ```
 

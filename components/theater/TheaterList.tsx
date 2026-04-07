@@ -22,7 +22,6 @@ export default function TheaterList({
   activeFilters,
   onFilterChange,
 }: Props) {
-  // 現在地を取得して地図を移動
   const handleGeolocation = () => {
     if (!navigator.geolocation) {
       alert('お使いのブラウザは位置情報に対応していません');
@@ -40,11 +39,8 @@ export default function TheaterList({
 
   return (
     <div className="flex flex-col h-full">
-      {/* ヘッダー */}
       <div className="p-4 border-b border-gray-200 bg-white">
-        <h1 className="text-base font-bold text-gray-900 tracking-tight">
-          🎬 Cinema Seat Finder
-        </h1>
+        <h1 className="text-base font-bold text-gray-900 tracking-tight">🎬 Cinema Seat Finder</h1>
         <p className="text-xs text-gray-500 mt-0.5">映画館を選んでおすすめ座席を確認</p>
         <button
           onClick={handleGeolocation}
@@ -55,10 +51,8 @@ export default function TheaterList({
         </button>
       </div>
 
-      {/* 絞り込みパネル */}
       <FilterPanel activeFilters={activeFilters} onChange={onFilterChange} />
 
-      {/* 映画館一覧 */}
       <ul className="flex-1 overflow-y-auto p-3 space-y-2">
         {theaters.length === 0 && (
           <li className="text-center text-xs text-gray-400 pt-8">
@@ -69,6 +63,11 @@ export default function TheaterList({
           const isSelected = selectedId === theater.theater_id;
           return (
             <li key={theater.theater_id}>
+              {/*
+               * div[role=button] を使う理由:
+               * カード内に Link（<a>）があるため、<button> でラップすると
+               * button > a の入れ子になり invalid HTML になる。
+               */}
               <div
                 role="button"
                 tabIndex={0}
@@ -81,12 +80,8 @@ export default function TheaterList({
                     : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm',
                 )}
               >
-                <p className="font-semibold text-gray-900 text-sm leading-snug">
-                  {theater.name}
-                </p>
+                <p className="font-semibold text-gray-900 text-sm leading-snug">{theater.name}</p>
                 <p className="text-xs text-gray-400 mt-1 truncate">{theater.address}</p>
-
-                {/* 設備バッジ */}
                 <div className="flex flex-wrap gap-1 mt-2">
                   {theater.facilities.map((f) => (
                     <span
@@ -97,8 +92,6 @@ export default function TheaterList({
                     </span>
                   ))}
                 </div>
-
-                {/* 詳細リンク */}
                 <Link
                   href={`/theaters/${theater.theater_id}`}
                   onClick={(e) => e.stopPropagation()}

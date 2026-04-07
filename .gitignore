@@ -23,6 +23,8 @@
 # misc
 .DS_Store
 SETUP_COMMANDS.md
+GOOGLE_MAPS_API.md
+CODE_READING_GUIDE.md
 
 # Claude Code 設定（コミット不要）
 .claude/
