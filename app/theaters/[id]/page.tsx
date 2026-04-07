@@ -1,6 +1,11 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { getTheaterById, getTheaters, getScreensByTheaterId, getRecommendationsByScreenId } from '@/lib/data';
+import {
+  getTheaterById,
+  getTheaters,
+  getScreensByTheaterId,
+  getRecommendationsByScreenId,
+} from '@/lib/data';
 import TheaterDetail from '@/components/theater/TheaterDetail';
 
 // ビルド時に全映画館ページを静的生成する

@@ -18,15 +18,15 @@
 
 ## 技術スタック
 
-| 項目 | 採用技術 |
-|------|----------|
-| フレームワーク | Next.js (App Router) |
-| 言語 | TypeScript |
-| スタイリング | Tailwind CSS（コンポーネントライブラリなし） |
-| 地図 | Google Maps JavaScript API |
-| データ管理 | JSON（静的ファイル） |
-| Linter / Formatter | ESLint + Prettier |
-| ホスティング | Vercel |
+| 項目               | 採用技術                                     |
+| ------------------ | -------------------------------------------- |
+| フレームワーク     | Next.js (App Router)                         |
+| 言語               | TypeScript                                   |
+| スタイリング       | Tailwind CSS（コンポーネントライブラリなし） |
+| 地図               | Google Maps JavaScript API                   |
+| データ管理         | JSON（静的ファイル）                         |
+| Linter / Formatter | ESLint + Prettier                            |
+| ホスティング       | Vercel                                       |
 
 ---
 
@@ -142,7 +142,7 @@ type Theater = {
   lat: number;
   lng: number;
   address: string;
-  facilities: string[];      // 例: ["IMAX", "Dolby Cinema", "4DX"]
+  facilities: string[]; // 例: ["IMAX", "Dolby Cinema", "4DX"]
   website: string;
   access_info: string;
 };
@@ -158,7 +158,7 @@ type Screen = {
   seat_rows: number;
   seat_columns: number;
   aisle_positions: number[]; // 通路がある列インデックス
-  screen_type: string;       // 例: "standard", "IMAX"
+  screen_type: string; // 例: "standard", "IMAX"
 };
 ```
 
@@ -171,15 +171,15 @@ type Screen = {
 ```typescript
 type ModeRecommendation = {
   seats: string[]; // 例: ["B-3", "C-4"]（行ラベル-列番号）
-  reason: string;  // 例: "スクリーン中央に近く映像・音響のバランスが最も取れた位置"
+  reason: string; // 例: "スクリーン中央に近く映像・音響のバランスが最も取れた位置"
 };
 
 type ScreenRecommendations = {
   screen_id: string;
   recommendations: {
-    balance: ModeRecommendation;       // バランス重視
-    immersive: ModeRecommendation;     // 没入感重視
-    overview: ModeRecommendation;      // 全体把握重視
+    balance: ModeRecommendation; // バランス重視
+    immersive: ModeRecommendation; // 没入感重視
+    overview: ModeRecommendation; // 全体把握重視
     accessibility: ModeRecommendation; // 出入りしやすさ重視
     motion_sickness: ModeRecommendation; // 酔いにくさ重視
   };

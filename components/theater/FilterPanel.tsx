@@ -24,10 +24,7 @@ export default function FilterPanel({ activeFilters, onChange }: Props) {
       <div className="flex items-center justify-between mb-2">
         <span className="text-xs font-medium text-gray-700">設備で絞り込む</span>
         {activeFilters.length > 0 && (
-          <button
-            onClick={() => onChange([])}
-            className="text-xs text-blue-600 hover:underline"
-          >
+          <button onClick={() => onChange([])} className="text-xs text-blue-600 hover:underline">
             リセット
           </button>
         )}

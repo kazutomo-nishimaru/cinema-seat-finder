@@ -13,7 +13,5 @@ export const getTheaterById = (id: string): Theater | undefined =>
 export const getScreensByTheaterId = (theaterId: string): Screen[] =>
   (screensData as Screen[]).filter((s) => s.theater_id === theaterId);
 
-export const getRecommendationsByScreenId = (
-  screenId: string,
-): ScreenRecommendations | undefined =>
+export const getRecommendationsByScreenId = (screenId: string): ScreenRecommendations | undefined =>
   (seatsData as ScreenRecommendations[]).find((s) => s.screen_id === screenId);

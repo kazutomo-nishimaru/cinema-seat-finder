@@ -40,7 +40,9 @@ export default function TheaterMap({ theaters, selectedId, onSelect, userLocatio
         <p className="text-sm text-gray-500 text-center">
           Google Maps API キーが設定されていません
           <br />
-          <span className="text-xs">.env.local に NEXT_PUBLIC_GOOGLE_MAPS_API_KEY を設定してください</span>
+          <span className="text-xs">
+            .env.local に NEXT_PUBLIC_GOOGLE_MAPS_API_KEY を設定してください
+          </span>
         </p>
       </div>
     );
