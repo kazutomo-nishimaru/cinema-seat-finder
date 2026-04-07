@@ -3,13 +3,9 @@
 import { cn } from '@/lib/cn';
 import type { RecommendMode } from '@/lib/types';
 
-// 'love' は現状データなしのため除外する
 const MODES: { mode: RecommendMode; label: string }[] = [
-  { mode: 'balance', label: 'バランス重視' },
-  { mode: 'immersive', label: '没入感重視' },
-  { mode: 'overview', label: '全体把握' },
-  { mode: 'accessibility', label: '出入り楽' },
-  { mode: 'motion_sickness', label: '酔いにくさ' },
+  { mode: 'legroom', label: '足元ゆったり' },
+  { mode: 'love', label: '推し席' },
 ];
 
 type Props = {

@@ -32,12 +32,8 @@ export type ModeRecommendation = {
 export type ScreenRecommendations = {
   screen_id: string;
   recommendations: {
-    balance: ModeRecommendation; // バランス重視
-    immersive: ModeRecommendation; // 没入感重視
-    overview: ModeRecommendation; // 全体把握重視
-    accessibility: ModeRecommendation; // 出入りしやすさ重視
-    motion_sickness: ModeRecommendation; // 酔いにくさ重視
-    love: ModeRecommendation; // 個人的なおすすめ
+    legroom: ModeRecommendation; // 足元ゆったり
+    love: ModeRecommendation; // 推し席（個人的なおすすめ）
   };
 };
 
