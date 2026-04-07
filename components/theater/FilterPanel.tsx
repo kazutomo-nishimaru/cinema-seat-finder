@@ -3,16 +3,7 @@
 import { cn } from '@/lib/cn';
 
 // theaters.json に存在する設備 + 仕様書記載の全設備
-const ALL_FACILITIES = [
-  'IMAX',
-  'Dolby Cinema',
-  '4DX',
-  '字幕',
-  '吹替',
-  'ミニシアター',
-  '名画座',
-  '駐車場',
-];
+const ALL_FACILITIES = ['IMAX', 'Dolby Cinema', '名画座'];
 
 type Props = {
   activeFilters: string[];

@@ -5,7 +5,7 @@ export type Theater = {
   lat: number;
   lng: number;
   address: string;
-  facilities: string[]; // 例: ["IMAX", "Dolby Cinema", "4DX"]
+  facilities: string[]; // 例: ["IMAX", "Dolby Cinema", "名画座"]
   website: string;
   access_info: string;
 };
