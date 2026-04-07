@@ -3,16 +3,15 @@
 import { useState } from 'react';
 import type { Screen, ScreenRecommendations, RecommendMode } from '@/lib/types';
 import RecommendModeSelector from './RecommendModeSelector';
-import SeatMap from './SeatMap';
 
 type Props = {
   screen: Screen;
   recommendations: ScreenRecommendations | undefined;
 };
 
-// モード選択状態を管理し、RecommendModeSelector + SeatMap を統合するクライアントコンポーネント
-export default function ScreenSection({ screen, recommendations }: Props) {
-  const [mode, setMode] = useState<RecommendMode>('balance');
+// モード選択状態を管理し、おすすめ座席番号とコメントを表示するクライアントコンポーネント
+export default function ScreenSection({ screen: _screen, recommendations }: Props) {
+  const [mode, setMode] = useState<RecommendMode>('legroom');
 
   if (!recommendations) {
     return (
@@ -29,25 +28,26 @@ export default function ScreenSection({ screen, recommendations }: Props) {
       {/* モード選択ボタン */}
       <RecommendModeSelector currentMode={mode} onChange={setMode} />
 
-      {/* 選択モードの理由テキスト */}
+      {/* おすすめ理由 */}
       <div className="rounded-lg bg-amber-50 border border-amber-100 px-3 py-2 text-xs text-amber-800">
         {currentRec.reason}
       </div>
 
-      {/* 座席グリッド */}
-      <SeatMap screen={screen} recommendations={recommendations} mode={mode} />
-
-      {/* 凡例 */}
-      <div className="flex items-center gap-4 text-xs text-gray-500 pt-1">
-        <span className="flex items-center gap-1.5">
-          <span className="w-3.5 h-3.5 rounded-sm bg-amber-400 inline-block shrink-0" />
-          おすすめ席
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="w-3.5 h-3.5 rounded-sm bg-gray-100 inline-block shrink-0" />
-          その他の席
-        </span>
-      </div>
+      {/* おすすめ座席番号一覧 */}
+      {currentRec.seats.length > 0 ? (
+        <div className="flex flex-wrap gap-1.5">
+          {currentRec.seats.map((seatId) => (
+            <span
+              key={seatId}
+              className="px-2 py-0.5 text-xs rounded bg-amber-100 text-amber-800 font-mono"
+            >
+              {seatId}
+            </span>
+          ))}
+        </div>
+      ) : (
+        <p className="text-xs text-gray-400">おすすめ座席データがありません</p>
+      )}
     </div>
   );
 }
