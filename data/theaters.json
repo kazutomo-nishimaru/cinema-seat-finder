@@ -28,5 +28,15 @@
     "facilities": ["4DX", "字幕", "吹替", "駐車場"],
     "website": "https://www.unitedcinemas.jp/aquacity/",
     "access_info": "ゆりかもめお台場海浜公園駅徒歩3分、りんかい線東京テレポート駅徒歩5分"
+  },
+  {
+    "theater_id": "theater-4",
+    "name": "ヒューマントラストシネマ有楽町",
+    "lat": 35.674800,
+    "lng": 139.762600,
+    "address": "東京都千代田区有楽町1-6-1 有楽町マリオン9F",
+    "facilities": ["字幕", "吹替", "ミニシアター"],
+    "website": "https://ttcg.jp/human_yurakucho/",
+    "access_info": "JR有楽町駅中央口・日比谷口より徒歩1分、東京メトロ日比谷駅A1出口より徒歩1分"
   }
 ]

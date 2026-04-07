@@ -34,5 +34,14 @@
     "seat_columns": 8,
     "aisle_positions": [3],
     "screen_type": "4DX"
+  },
+  {
+    "screen_id": "screen-5",
+    "theater_id": "theater-4",
+    "screen_name": "シアター1",
+    "seat_rows": 11,
+    "seat_columns": 19,
+    "aisle_positions": [],
+    "screen_type": "standard"
   }
 ]
