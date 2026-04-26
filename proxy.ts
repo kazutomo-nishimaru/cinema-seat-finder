@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 // Basic 認証ミドルウェア
 // 環境変数 BASIC_AUTH_USER / BASIC_AUTH_PASSWORD が未設定の場合は認証をスキップする（ローカル開発用）
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const user = process.env.BASIC_AUTH_USER;
   const password = process.env.BASIC_AUTH_PASSWORD;
 
